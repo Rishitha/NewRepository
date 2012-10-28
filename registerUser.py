@@ -53,8 +53,7 @@ else:
     logFile.write('else entered\n')
     logFile.close()
 
-    #GUID stuff goes here
-    queryString = "INSERT INTO users (username, password) values('" + username + "','" + password + "')"
+    queryString = "INSERT INTO users (username, password, uuid) values('" + username + "','" + password + "', UUID())"
     cur.execute(queryString);
     db.commit()
 

@@ -1,0 +1,2 @@
+Entered register user script
+Connected DB
