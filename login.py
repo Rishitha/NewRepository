@@ -35,7 +35,6 @@ logFile.close()
 
 queryString = "SELECT uuid FROM users WHERE username='" + username + "' AND password='" + password + "'"
 cur.execute(queryString);
-uuid = cur.fetchone() #is this right?? will cur.rowcount be zero now? CHECK.
 
 logFile = open('loginlog.txt', 'a')
 logFile.write('Select complete\n')
@@ -45,14 +44,21 @@ if cur.rowcount != 0:
     logFile = open('loginlog.txt', 'a')
     logFile.write('if entered\n')
     logFile.close()
-    # Return a message to user that they didn't enter a valid username/password combo.
+
+    print "Content-Type: text"
+    print
+    print "False"
+    print
     # Toast it to the screen and stay on that activity.
 else:
     logFile = open('loginlog.txt', 'a')
     logFile.write('else entered\n')
     logFile.close()
 
-    #Return a message to phone to go to main activity.  Store the users username, password, and uuid.
+    print "Content-Type: text"
+    print
+    print "True"
+    print
 
 logFile = open('loginlog.txt', 'a')
 logFile.write('Done\n')
