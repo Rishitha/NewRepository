@@ -36,7 +36,6 @@ logFile.close()
 
 queryString = "SELECT username FROM users WHERE username='" + username + "'"
 cur.execute(queryString);
-uid = cur.fetchone()
 
 logFile = open('registerlog.txt', 'a')
 logFile.write('Select complete\n')
